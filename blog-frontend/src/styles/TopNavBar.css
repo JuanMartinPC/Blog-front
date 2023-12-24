@@ -1,0 +1,12 @@
+.btnSideBar{
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+    height: min-content;
+    width: min-content;
+    border-radius: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    margin-left: 2%;
+}

@@ -1,0 +1,143 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    height: max-content;
+
+    user-select: none;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    margin: 10px 10px;
+}
+
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px;        
+}
+
+.cardContainer:hover{
+    transform: scale(1.1);
+    transition: all .2s ease-in;
+}
+
+.cardHeader{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: start;
+    color: rgb(1, 1, 75);
+    cursor: pointer;
+}
+
+.cardAvatarImg{
+    width: 50px; height: 50px;
+}
+
+.cardHeader-fc{
+    text-align: start;
+    color: rgb(1, 1, 75);
+}
+
+.cardFooter{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 35%;
+    top: 80%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: rgba(255, 45, 45, 0.918);
+    border-radius: 30px;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    width: 500px;
+    height: 100px;
+    z-index: 100;
+}
+
+.dotMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fullCardText{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dotMenu-fc{
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.btnCard{
+    cursor: pointer;
+    color: rgb(1, 1, 75);
+    &:hover{
+        transition: all .5s ease-in;
+        transform: rotateY(360deg);
+    }
+}
+
+.FullCard{
+    display: flex;
+    font-size: 1.1em;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 11%;
+    top: 5px;
+
+    width: 82vw;
+    height: 90vh;    
+    
+    user-select: none;
+
+    box-sizing: content-box;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    margin: 10px 10px;}
+
+.notification{
+    width: 40%;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgb(0, 61, 85);
+    color: white;
+    display: none;
+}
+
+.show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 2vh;
+}

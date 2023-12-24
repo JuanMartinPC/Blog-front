@@ -1,0 +1,110 @@
+/* .homeContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.posts{
+    display: grid;
+    grid-template-columns: .5fr 3fr 1fr;
+}
+
+.card{
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.userStatsCard{
+    grid-column: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    z-index: 0;
+    top: 15vh;
+    width: 80%;
+    height: 50vh;
+    box-sizing: content-box;
+    background-color: whitesmoke;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.userImage{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.userImage img{
+    border: 3px solid rgb(0, 61, 85);
+}
+
+.SideBar{
+    grid-column: 1/2;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 1.2em;
+    padding: 0 20px;
+}
+
+.sbBtn{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80px;
+    border-radius: 100%;
+    &:hover{
+        transition: all .3s ease-out;
+        box-shadow: 2px -2px 2px 2px white;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.addForm{
+    position: fixed;
+    right: 25vw;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    width: 40vw;
+    height: 50vh;
+    z-index: 150;
+}
+
+.btnEmptyPpb{
+    background-color: white;
+    width: min-content;
+    box-sizing: content-box;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 15px;
+    position: relative;
+    top: 0px;
+    &:hover{
+        background-color: rgb(0, 61, 85);
+        color: white;
+    }
+}
