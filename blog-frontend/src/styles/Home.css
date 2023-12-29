@@ -5,63 +5,69 @@
 } */
 
 .posts{
-    display: grid;
-    grid-template-columns: .5fr 3fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card{
-    grid-column: 2/3;
+    box-sizing: b-box;
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.ppbCard{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: start;
     align-items: center;
     z-index: 100;
-}
-
-.userStatsCard{
-    grid-column: 3/4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    z-index: 0;
-    top: 15vh;
-    width: 80%;
-    height: 50vh;
-    box-sizing: content-box;
-    background-color: whitesmoke;
-    border-bottom: 5px rgb(0, 61, 85) solid;
-    border-radius: 30px;
-    padding: 10px;
-}
-
-.userImage{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-}
-
-.userImage img{
-    border: 3px solid rgb(0, 61, 85);
 }
 
 .SideBar{
-    grid-column: 1/2;
+    box-sizing: border-box;
     display: flex;
-    position: fixed;
+    position: sticky;
     top: 0px;
     z-index: 100;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 10%;
-    height: 100vh;
-    box-sizing: border-box;
+    width: 100%;
+    height: 10vh;
     background-color: rgb(0, 0, 0);
     color: white;
     font-size: 1.2em;
     padding: 0 20px;
+}
+
+.addNote{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: whitesmoke;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    border-radius: 25px;
+    width: 20vw;
+    height: 8vh;
+    margin-top: 5vh;
+    padding: 0px 5px;
+    color: rgb(95, 95, 95);
+    &:hover{
+        border-bottom: 2px rgb(0, 33, 46) solid;
+        cursor: pointer;
+    }
+}
+
+.addNote h4{
+    width: 100%;
+    text-align: center;
 }
 
 .sbBtn{
@@ -69,13 +75,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 80px;
-    border-radius: 100%;
-    &:hover{
-        transition: all .3s ease-out;
-        box-shadow: 2px -2px 2px 2px white;
-    }
+    box-sizing: border-box;
+    height: 10vh;
+    width: 10%;
+    border-bottom: 5px solid #000;
+    /* &:hover{
+        transition: all .1s ease-out;            
+        border-bottom: 5px solid rgb(211, 211, 183);
+    } */
+}
+
+.sbBtn::after{
+    content: '';
+    display: flex;
+    justify-content: center;
+    width: 0px;
+}
+
+.sbBtn:nth-child(1):hover::after{
+    content: 'Home';
+    display: flex;
+    transition: all .3s ease-out;
+    width: 100%;
+}
+.sbBtn:nth-child(2):hover::after{
+    content: 'Users';
+    display: flex;
+    transition: all .3s ease-out;
+    width: 100%;
+}
+.sbBtn:nth-child(3):hover::after{
+    content: 'Chat';
+    display: flex;
+    transition: all .3s ease-out;
+    width: 100%;
+}
+.sbBtn:nth-child(4):hover::after{
+    content: 'Notifications';
+    display: flex;
+    transition: all .3s ease-out;
+    width: 100%;
+}
+.sbBtn:nth-child(5):hover::after{
+    content: 'Profile';
+    display: flex;
+    transition: all .3s ease-out;
+    width: 100%;
+}
+.sbBtn:nth-child(6):hover::after{
+    content: 'LogOut';
+    display: flex;
+    transition: all .3s ease-out;
+    width: 100%;
 }
 
 .hidden{
@@ -84,27 +135,30 @@
 
 .addForm{
     position: fixed;
-    right: 25vw;
-    box-sizing: border-box;
-    background-color: whitesmoke;
-    border-radius: 30px;
-    border-bottom: 5px rgb(0, 61, 85) solid;
-    width: 40vw;
-    height: 50vh;
+    background-color: transparent;
     z-index: 150;
 }
 
 .btnEmptyPpb{
     background-color: white;
-    width: min-content;
+    width: 70%;
+    height: 50px;
     box-sizing: content-box;
+    margin: 20px 0px;
     padding: 5px 20px;
     border: none;
-    border-radius: 15px;
-    position: relative;
-    top: 0px;
+    border-radius: 15px;    
+    z-index: 200;
+
     &:hover{
+        cursor: pointer;
+        transition: all .2s ease-out;
         background-color: rgb(0, 61, 85);
         color: white;
     }
+}
+
+.userImage{
+    width: 40px;
+    height: 40px;
 }

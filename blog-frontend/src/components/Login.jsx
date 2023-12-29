@@ -37,20 +37,25 @@ function Login() {
     }
   };
 
+  const token = localStorage.getItem('token')
   return (
     <>
-        <section className="loginSection">
-          <h1>Iniciar sesión</h1>
-          <form className="registerForm" ref={FormRef} onSubmit={handleFetch}>
-            <input required placeholder="ejemplo@correo.com" type="email" name="email" />
-            <input required placeholder="contraseña" type="password" name="password" />
-            <button type="submit" className="formNextBtn">
-              Ingresar
-            </button>
-            <p>Aún no te has registrado? </p><a href="/register">Registrate ahora</a>
-            <p id="msj"></p>
-          </form>
-        </section>
+        {
+          !token ? 
+            <section className="loginSection">
+            <h1>Iniciar sesión</h1>
+            <form className="registerForm" ref={FormRef} onSubmit={handleFetch}>
+              <input required placeholder="ejemplo@correo.com" type="email" name="email" />
+              <input required placeholder="contraseña" type="password" name="password" />
+              <button type="submit" className="formNextBtn">
+                Ingresar
+              </button>
+              <p>Aún no te has registrado? </p><a href="/register">Registrate ahora</a>
+              <p id="msj"></p>
+            </form>
+          </section> :
+          window.location.replace('/home')
+        }
     </>
   );
 }

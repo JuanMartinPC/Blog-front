@@ -25,19 +25,14 @@ input{
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    left: 11%;
-    top: 5px;
-
-    width: 85vw;
-    height: 95vh;    
+    width: 100vw;
+    height: 100vh;    
     
     user-select: none;
 
     box-sizing: border-box;
     background-color: whitesmoke;
-    border-radius: 30px;
-    border-bottom: 5px rgb(0, 61, 85) solid;
-    margin: 10px 10px;}
+    border-bottom: 5px rgb(0, 61, 85) solid;}
 
 .FormContainer{
     display: flex;

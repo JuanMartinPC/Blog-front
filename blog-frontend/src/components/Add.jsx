@@ -8,7 +8,7 @@ function Add({ toggle }) {
     const user_id = localStorage.getItem('user_id');
     
     const handleFetch = () => {
-        const newDependece = {
+        const newNote = {
             "user_id": user_id,
             "title": FormRef.current.title.value,
             "content": FormRef.current.content.value,
@@ -19,27 +19,29 @@ function Add({ toggle }) {
         {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': Token
         },
-        body: JSON.stringify(newDependece)
+        body: JSON.stringify(newNote)
         })
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(err => console.log(err))
 
-        window.location.replace('/home')
+        /* window.location.replace('/home') */
+
+
+        console.log(FormRef.current.image.value);
     }
 
 
 
     return (
-        <form className='FullForm' ref={FormRef} onSubmit={(e) => {e.preventDefault(), handleFetch()}}>
+        <form className='FullForm' method='POST' encType='multipart/form-data' ref={FormRef} onSubmit={(e) => {e.preventDefault(), handleFetch()}}>
             <h2>Agregar Nota</h2>
             <section className='FormContainer'>
                 <section className="form-image">
                     <img src="https://ps.w.org/image-comparison/assets/icon-256x256.png?rev=2587037" alt="prueba"/>
-                    <input type="file" name="image" id="image" />
+                    <input type="file"  name="image" id="image" />
                 </section>
 
                 <section className="form-inputs">

@@ -1,0 +1,11 @@
+.ppbiContainer{
+    background-color: whitesmoke;
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.ppbText{
+    overflow: hidden;
+}

@@ -1,15 +1,15 @@
 .cardContainer{
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
-    width: 80%;
+    width: 50%;
     height: max-content;
 
     user-select: none;
     background-color: whitesmoke;
-    border-radius: 30px;
+    border-radius: 15px;
     border-bottom: 5px rgb(0, 61, 85) solid;
     margin: 10px 10px;
 }
@@ -25,15 +25,15 @@
 }
 
 .cardContainer:hover{
-    transform: scale(1.1);
+    transform: scale(1.01);
     transition: all .2s ease-in;
 }
 
 .cardHeader{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     width: 100%;
-    align-items: start;
+    align-items: center;
     color: rgb(1, 1, 75);
     cursor: pointer;
 }
@@ -45,6 +45,12 @@
 .cardHeader-fc{
     text-align: start;
     color: rgb(1, 1, 75);
+}
+
+.df{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
 }
 
 .cardFooter{

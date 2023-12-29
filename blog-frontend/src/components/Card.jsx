@@ -1,8 +1,9 @@
 import React, { useContext, useRef } from 'react';
 import '../styles/Card.css'
 import '../styles/Add.css'
-import { SlTrash, SlPencil, SlActionUndo } from 'react-icons/sl';
+import { SlLike, SlSpeech } from 'react-icons/sl';
 import PostContext from '../context/PostContext.jsx';
+import Swal from 'sweetalert2';
 
 function Card({p}) {
 
@@ -49,9 +50,22 @@ function Card({p}) {
       window.location.reload()
   }
 
-  const displayEdit = () => {
-    const edit = document.getElementById(p.post_id)
-    edit.classList.toggle('FullForm')
+  function warningDelete(){
+    Swal.fire({
+      title: "Deseas enviar esta nota a la papelera?",
+      icon: "question",
+      showCancelButton: 'true',
+      cancelButtonText: 'Mejor no.',
+      confirmButtonColor: 'rgb(0, 61, 85)',
+      showConfirmButton: 'true',
+      confirmButtonText: 'Si, enviar.'
+    }).then((result) => {
+        if (result.isConfirmed){
+        toPaperbin()}
+        else if (result.isDismissed){
+          Swal.close()
+        }
+      })
   }
 
   return (
@@ -59,8 +73,11 @@ function Card({p}) {
     <div className='cardContainer' key={p.post_id}>
       <div className='cardContent'>
           <div className='cardHeader'>
-            <img className='cardAvatarImg' src={`../../public/images/${p.image}`} alt="avatar"/>
-            <h3>{p.username}</h3>
+            <div className='df'>
+              <img className='cardAvatarImg' src={`../../public/images/${p.image}`} alt="avatar"/>
+              <h3>{p.username}</h3>
+            </div>
+            <p>Seguir</p>
           </div>
               <h3>{p.title}</h3>
           <p className='cardText'>{p.content}</p>
@@ -69,8 +86,9 @@ function Card({p}) {
             <p>{p.category}</p>
           </div>
           <div id='menu' className='dotMenu'>
-            <i className='btnCard' onClick={displayEdit}><SlPencil /></i>
-            <i className='btnCard' onClick={toPaperbin}><SlTrash/></i>
+            <i className='btnCard' ><SlLike /></i>
+            <i className='btnCard' ><SlSpeech /></i>
+            {/* <i className='btnCard' onClick={warningDelete}><SlTrash/></i> */}
           </div>
       </div>
     </div>

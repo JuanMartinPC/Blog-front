@@ -3,9 +3,8 @@
 }
 
 .profileBodySection{
-    width: 90%;
+    width: 100%;
     position: absolute;
-    right: 0px;
     height: 100vh;
     background-color: whitesmoke;
     overflow-y: scroll;
@@ -13,7 +12,7 @@
 
 .header{
     width: 100%;
-    height: 35vh;
+    height: 45vh;
     background-color: rgb(89, 104, 172);
     z-index: 1;
 }
@@ -23,7 +22,7 @@
     justify-content: space-evenly;
     align-items: flex-end;
     position: relative;
-    top: 25vh;
+    top: 30vh;
     width: 100%;
 }
 
@@ -71,21 +70,47 @@
     background-color: white;
     border-radius: 10px;
     border-bottom: 5px rgb(0, 61, 85) solid;
-    padding: 20px;
+    
     margin: 0px 10px;
     box-sizing: content-box;
-
 }
 
 .lastActivity{
     grid-column: 2 / 3;
-    width: 100%;
+    width: 98%;
     height: min-content;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+}
+
+.activityHeader{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1vh 2vw;
+}
+
+.activityBtn{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    &:hover{
+        cursor: pointer;
+        border-bottom: 1px rgb(0, 61, 85) solid;
+    }
 }
 
 .ActivityCard{
@@ -95,20 +120,34 @@
     align-items: start;
     width: 25%;
     height: 200px;
-    background-color: white;
+    background-color: rgb(207, 228, 225);
     border-radius: 10px;
     border-bottom: 5px rgb(0, 61, 85) solid;
     padding: 20px;
     margin: 0px 10px;
     box-sizing: content-box;
+    &:hover{
+        cursor: pointer;
+        border-bottom: 1px rgb(0, 61, 85) solid;
+    }
 }
 
 .notesContainer{
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: start;
     align-items: center;
+    padding: 20px;
     width: 100%;
     row-gap: 20px;
+}
+
+.dflex{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 5px;
+    width: 500px;
 }

@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react'
 import PostContext from '../context/PostContext'
-import '../App.css';
 import '../styles/Home.css'
 import Add from '../components/Add.jsx'
-import { SlHome, SlPlus, SlTrash, SlUserFemale } from "react-icons/sl";
 import PaperbinItem from '../components/PaperbinItem.jsx';
+import NavBar from '../components/NavBar.jsx';
 
 function Paperbin() {
     const token = localStorage.getItem('token')
@@ -25,12 +24,6 @@ function Paperbin() {
         }
     }
 
-    function toPaperbin(){
-        window.location.replace('/paperbin')
-    }
-    function toHome(){
-        window.location.replace('/home')
-    }
 
     function handleEmptyppb(){
         fetch('http://localhost:3000/posts/emptyPaperbin',
@@ -50,22 +43,16 @@ function Paperbin() {
         <>
         {!token? window.location.replace('/') : 
         <main className='homeContainer'>
-            <section id='SideBar' className='SideBar'>
-                <h1>MyNO</h1>
-                <i className='sbBtn' onClick={toHome} ><SlHome /></i>
-                <i className='sbBtn' onClick={displayForm}><SlPlus /></i>
-                <i className='sbBtn' onClick={toPaperbin} ><SlTrash /></i>
-                <i className='sbBtn'><SlUserFemale /></i>
-            </section>
+            
 
             <div id='addForm' className="hidden">
             <Add toggle={displayForm}/>
             </div>
 
             <div className='posts'>
-                <h1>Papelera</h1>
+                <NavBar />
                 <button className='btnEmptyPpb' onClick={handleEmptyppb}>Vaciar Papelera</button>       
-                <div className='card'>
+                <div className='ppbCard'>
                     {
                     paperbin.length > 0 ? paperbin.map((p) => (<PaperbinItem p={p} key={p.post_id}/>)) : <h3>Nada por aquí.</h3>
                     }

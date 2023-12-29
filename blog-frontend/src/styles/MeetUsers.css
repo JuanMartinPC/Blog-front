@@ -1,0 +1,105 @@
+.UsersSection{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.usMenu{
+    display: flex;
+    
+    justify-content: space-evenly;
+    align-items: start;
+    row-gap: 2vh;
+    height: 70vh;
+    margin-left: 20px;
+    width: 50%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border-bottom: 5px solid rgb(0, 61, 81);
+}
+
+.usMenuP{
+    font-size: 1.2em;
+    width: 40%;
+}
+
+.usMenuP::after{
+    content: '';
+    display: flex;
+    justify-content: center;
+    width: 0px;
+    border: 2px solid whitesmoke;
+}
+
+.usMenuP:hover::after{
+    content: '';
+    transition: all .3s ease-out;
+    width: 100%;
+    border: 2px solid rgb(0, 61, 81);
+}
+
+.ymkSection{
+    width: 50%;
+}
+
+.Users{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 70vh;
+    padding-top: 2vh;
+    overflow-y: scroll;
+    row-gap: 2vh;
+}
+
+.MeetUsersCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    height: 100px;
+    padding: 0px 10px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border-bottom: 5px solid rgb(0, 61, 81);
+}
+
+.UserPrev{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: 20px;
+    width: 30%;
+}
+
+.UserImage{
+    width: 60px;
+    height: 60px;
+}
+
+.nandd{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 20px;
+}
+
+.followBtn{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border-bottom: 5px rgb(0, 61, 85) solid;
+    &:hover{
+        cursor: pointer;
+        border-bottom: 1px rgb(0, 61, 85) solid;
+    }
+}

@@ -5,7 +5,8 @@ import Card from '../components/Card.jsx';
 import Add from '../components/Add.jsx'
 import PostContext from '../context/PostContext.jsx';
 import { useState, useContext } from 'react';
-import { SlHome, SlPlus, SlTrash, SlUserFemale } from "react-icons/sl";
+import { SlBell, SlHome, SlPeople, SlPower, SlUser } from "react-icons/sl";
+import NavBar from '../components/NavBar.jsx';
 
 function Home() {
 
@@ -36,6 +37,10 @@ function Home() {
   function toProfile(){
     window.location.replace('/profile')
   }
+  function Logout(){
+    localStorage.removeItem('token')
+    return window.location.replace('/')
+}
 
   const [userInfo, setUserInfo] = useState({})
 
@@ -68,12 +73,20 @@ function Home() {
         </div>
  
         <div className='posts'>
-          <section id='SideBar' className='SideBar'>
-            <h1>MyNO</h1>
+          {/* <section id='SideBar' className='SideBar'>
             <i className='sbBtn' onClick={toHome} ><SlHome className='sbIcon' /></i>
-            <i className='sbBtn' onClick={displayForm}><SlPlus className='sbIcon' /></i>
-            <i className='sbBtn' onClick={toPaperbin} ><SlTrash className='sbIcon' /></i>
-            <i className='sbBtn' onClick={toProfile}><SlUserFemale className='sbIcon' /></i>
+            {/* <i className='sbBtn' onClick={displayForm}><SlPlus className='sbIcon' /></i> }
+            {/* <i className='sbBtn' onClick={toPaperbin} ><SlTrash className='sbIcon' /></i> }
+            <i className='sbBtn'><SlPeople className='sbIcon' /></i>
+            <i className='sbBtn'><SlBell className='sbIcon' /></i>
+            <i className='sbBtn' onClick={toProfile}><SlUser className='sbIcon' /></i>
+            <i onClick={Logout} className='sbBtn'><SlPower /></i>
+          </section> */}
+          <NavBar />
+
+          <section onClick={displayForm} className='addNote'>
+            <img className="userImage" src={`../../public/images/${userInfo.image}`}/>
+            <h4>Crear una nueva nota</h4>
           </section>
 
           <div className='card'>
